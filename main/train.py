@@ -188,7 +188,7 @@ reducelearate = keras.callbacks.ReduceLROnPlateau(monitor='loss', factor=0.5, pa
 earlystop = keras.callbacks.EarlyStopping(monitor='loss', min_delta=3, patience=0, verbose=0, mode='min')
 
 batch_size = 16
-step_epoch = 200
+step_epoch = 32
 combined.fit_generator(
         data_loader.load_data(batch_size),
         steps_per_epoch=step_epoch,
