@@ -1,6 +1,6 @@
 from keras.layers import Input, Conv2D, BatchNormalization, Activation, UpSampling2D, Conv2DTranspose, Reshape, Dropout, concatenate, Concatenate, multiply, add, MaxPooling2D, Lambda, Activation, subtract, Flatten, Dense
 from keras.callbacks import ModelCheckpoint, LearningRateScheduler, ReduceLROnPlateau
-from keras_contrib.layers.normalization import InstanceNormalization
+from keras_contrib.layers.normalization.instancenormalization import InstanceNormalization
 from keras.preprocessing.image import ImageDataGenerator
 from keras.layers.advanced_activations import LeakyReLU
 from keras.optimizers import Adam
