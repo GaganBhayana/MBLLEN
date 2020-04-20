@@ -140,7 +140,7 @@ class Show_History(keras.callbacks.Callback):
             path_A_1 = path_mid[0] + '_' + dataset_name
             path_A = os.path.join(path_A_1, path_mid[1])
             ###
-            print(path_B)
+            print(img_B_path)
             print(path_A)
             ###
             img_A = utls.imread_color(path_A)
