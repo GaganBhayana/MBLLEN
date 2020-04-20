@@ -139,6 +139,10 @@ class Show_History(keras.callbacks.Callback):
             path_mid = os.path.split(img_B_path)
             path_A_1 = path_mid[0] + '_' + dataset_name
             path_A = os.path.join(path_A_1, path_mid[1])
+            ###
+            print(path_B)
+            print(path_A)
+            ###
             img_A = utls.imread_color(path_A)
 
             nw = random.randint(0, img_A.shape[0] - img_rows)
