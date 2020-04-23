@@ -28,7 +28,7 @@ def build_mbllen(input_shape):
 
     def EM(input, kernel_size, channel):
         down1, pool1 = down_block(input, channel, (kernel_size, kernel_size))
-        res = up_block(down1, pool1, channel, (kernel_size, kernel_size))
+        res = up_block(pool1, down1, channel, (kernel_size, kernel_size))
         return res
 
     inputs = Input(shape=input_shape)
