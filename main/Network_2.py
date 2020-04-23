@@ -6,9 +6,9 @@ from DWT import DWT_Pooling, IWT_UpSampling
 
 def down_block(input_layer, filters, kernel_size=(3,3), activation="relu"):
     output = Conv2D(filters, (3,3), padding="same", activation=activation, data_format='channels_last')(input_layer)
-    output = Conv2D(filters, kernel_size, padding="valid", activation=activation, data_format='channels_last')(input_layer)
-    output = Conv2D(filters*2, kernel_size, padding="valid", activation=activation, data_format='channels_last')(input_layer)
-    output = Conv2D(filters*4, kernel_size, padding="valid", activation=activation, data_format='channels_last')(input_layer)
+    output = Conv2D(filters, kernel_size, padding="valid", activation=activation, data_format='channels_last')(output)
+    output = Conv2D(filters*2, kernel_size, padding="valid", activation=activation, data_format='channels_last')(output)
+    output = Conv2D(filters*4, kernel_size, padding="valid", activation=activation, data_format='channels_last')(output)
     return output, DWT_Pooling()(output)
 
 def up_block(input_layer, residual_layer, filters, kernel_size=(3,3),activation="relu"):
