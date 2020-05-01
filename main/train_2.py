@@ -21,6 +21,7 @@ import os
 import random
 import Network_2 as Network
 import utls
+from colab_utls import save_file_to_google_drive
 
 def my_loss(y_true, y_pred):
     MAE_loss = K.mean(K.abs(y_pred[:,:,:,:3] - y_true))
@@ -123,6 +124,7 @@ class Show_History(keras.callbacks.Callback):
         num_epoch += 1
         modelname = './models/' + str(num_epoch) + '_' + dataset_name + '_base.h5'
         mbllen.save_weights(modelname)
+        save_file_to_google_drive(modelname, modelname)############################
 
         # test val data
         path = glob('../dataset/test/*.jpg')
