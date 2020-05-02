@@ -124,7 +124,7 @@ class Show_History(keras.callbacks.Callback):
         num_epoch += 1
         modelname = './models/' + str(num_epoch) + '_' + dataset_name + '_base.h5'
         mbllen.save_weights(modelname)
-        save_file_to_google_drive(modelname, modelname)############################
+        save_file_to_google_drive(modelname, str(num_epoch) + '_' + dataset_name + '_base.h5')############################
 
         # test val data
         path = glob('../dataset/test/*.jpg')
