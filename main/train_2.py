@@ -76,7 +76,7 @@ data_loader = Dataloader(dataset_name=dataset_name, crop_shape=(img_rows, img_co
 
 # Build the network
 mbllen = Network.build_mbllen(crop_shape)
-# mbllen.load_weights('./1_dark2_color_identity_param.h5')
+# mbllen.load_weights('./_dark_base.h5')
 
 Input_MBLLEN = Input(shape=input_shape)
 img_A = Lambda(f1)(Input_MBLLEN)
